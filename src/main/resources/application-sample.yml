@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: configserver
+  security:
+    user:
+      name: ${CONFIG_USER}
+      password: ${CONFIG_PASSWORD}
+  cloud:
+    config:
+      server:
+        git:
+          uri: ${CONFIG_REPO}
+          default-label: main
+          username: ${GIT_USER}
+          password: ${GIT_TOKEN}
+server:
+  port: 7777
